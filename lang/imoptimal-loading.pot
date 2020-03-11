@@ -1,0 +1,157 @@
+# Copyright (C) 2020 loading-screen-by-imoptimal
+# This file is distributed under the same license as the loading-screen-by-imoptimal package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Loading Screen by Imoptimal\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Ivan @ imoptimal.com <info@imoptimal.com>\n"
+"Last-Translator: imoptimal <info@imoptimal.com>\n"
+"Report-Msgid-Bugs-To: https://www.imoptimal.com\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: inc/enqueue-resources.php:136
+msgid "Set the custom logo"
+msgstr ""
+
+#: inc/enqueue-resources.php:137
+msgid "Custom logo selected"
+msgstr ""
+
+#: inc/options-page.php:8
+msgid "Loading Screen by Imoptimal"
+msgstr ""
+
+#: inc/options-page.php:12
+msgid "Instructions"
+msgstr ""
+
+#: inc/options-page.php:15
+msgid "First of all, set the number of loading screen options your website needs (either one for the entire website, or two different ones - first for the homepage, second for all of the other pages)."
+msgstr ""
+
+#: inc/options-page.php:16
+msgid "Choose if the plugin files (styles and scripts) will be loaded in regular or minified version. Default: not minified."
+msgstr ""
+
+#: inc/options-page.php:17
+msgid "Open each loading screen option by clicking on its title bar."
+msgstr ""
+
+#: inc/options-page.php:18
+msgid "Set the logo image that will be used on the loading screen (choose from the existing uploads, or upload a new item)."
+msgstr ""
+
+#: inc/options-page.php:19
+msgid "Select the background color for the loading screen (by clicking on the input field and choosing from the dropdown color pallete)."
+msgstr ""
+
+#: inc/options-page.php:20
+msgid "Select the color of progress bar and percentage text (same as the above input field)."
+msgstr ""
+
+#: inc/options-page.php:23
+msgid "Note: \"Save Meta Options\" button is used to save the number of loading screen options, as well as the minification of plugin files, while \"Save Loading Options\" button is used for all of the options inside of every loading screen options item."
+msgstr ""
+
+#: inc/options-page.php:25
+msgid "IMPORTANT: Javascript must be turned ON in your browser settings in order for this plugin to work!"
+msgstr ""
+
+#: inc/options-page.php:30
+msgid "Meta Options"
+msgstr ""
+
+#: inc/options-page.php:37
+msgid "Loading Options"
+msgstr ""
+
+#: inc/options-page.php:53
+msgid "Ratings & Reviews"
+msgstr ""
+
+#: inc/options-page.php:55
+msgid "If you like this plugin, please consider leaving a"
+msgstr ""
+
+#: inc/options-page.php:57
+msgid "rating"
+msgstr ""
+
+#: inc/options-page.php:58
+msgid "A huge thanks in advance!"
+msgstr ""
+
+#: inc/options-page.php:60
+msgid "Leave us a rating"
+msgstr ""
+
+#: inc/options-page.php:64
+msgid "About the plugin"
+msgstr ""
+
+#: inc/options-page.php:65
+msgid "Developed by: "
+msgstr ""
+
+#: inc/options-page.php:68
+msgid "Need some support?"
+msgstr ""
+
+#: inc/options-page.php:69
+msgid "Contact the developers via the Support Forum"
+msgstr ""
+
+#: inc/options-page.php:71
+msgid "Contact us"
+msgstr ""
+
+#: inc/register-settings.php:35
+msgid "Choose how many different loading screens you need"
+msgstr ""
+
+#: inc/register-settings.php:50
+msgid "Choose if the plugin files (styles and scripts) will be loaded in regular or minified version"
+msgstr ""
+
+#: inc/register-settings.php:77
+msgid "Loading Screen Options"
+msgstr ""
+
+#: inc/register-settings.php:87
+msgid "Upload an image to display on the loading screen (or browse from the existing uploads)"
+msgstr ""
+
+#: inc/register-settings.php:98
+msgid "Pick the background color"
+msgstr ""
+
+#: inc/register-settings.php:109
+msgid "Pick the bar and percentage text color"
+msgstr ""
+
+#: inc/render-fields.php:12
+msgid "Use the same loading screen for the whole website"
+msgstr ""
+
+#: inc/render-fields.php:14
+msgid "Use different loading screens for: homepage, other pages"
+msgstr ""
+
+#: inc/render-fields.php:29
+msgid "Use regural files (not minified)"
+msgstr ""
+
+#: inc/render-fields.php:30
+msgid "Use minified files"
+msgstr ""

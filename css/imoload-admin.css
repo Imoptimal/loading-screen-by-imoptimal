@@ -1,0 +1,291 @@
+/* Admin side styles */
+
+@charset "UTF-8";
+
+.imoload-wrap {
+    max-width: 960px;
+    min-width: 320px;
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.imoload-wrap h1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    background-color: #061228;
+    color: #34ab00;
+    padding: 0 10px;
+}
+
+.imoload-wrap .imoload-logo {
+    display: inline-block;
+    width: 120px;
+    height: 70px;
+    background-image: url("../img/imoptimal-logo-white.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.imoload-wrap .imoload-logo:hover {
+    -webkit-transform: scaleY(1.25) scaleX(1.25);
+    transform: scaleY(1.25) scaleX(1.25);
+}
+
+.imoload-wrap .imoload-instructions {
+    cursor: pointer;
+}
+
+.imoload-wrap .imoload-instructions .pointer::after {
+    margin-left: 5px;
+    content: '(Click to open)';
+    font-size: 12px;
+}
+
+.imoload-wrap .imoload-instructions.active .pointer::after {
+    margin-left: 5px;
+    content: '(Click to close)';
+}
+
+.imoload-wrap .imoload-instructions .pointer::before {
+    margin-left: 10px;
+    padding: 5px 10px;
+    content: '+';
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    color: #34ab00;
+    background-color: #061228;
+}
+
+.imoload-wrap .imoload-instructions.active .pointer::before {
+    content: '-';
+    color: #061228;
+    background-color: #34ab00;
+}
+
+.imoload-wrap .imoload-instructions:hover .pointer::before {
+    content: "⬇️";
+    color: #061228;
+    background-color: #34ab00;
+}
+
+.imoload-wrap .imoload-instructions.active:hover .pointer::before {
+    content: "⬆️";
+}
+
+.imoload-wrap ol {
+    margin: 25px;
+    list-style: none;
+}
+
+.imoload-wrap .note {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.imoload-wrap noscript {
+    font-weight: bold;
+    font-size: 24px;
+    color: red;
+}
+
+.imoload-content h2 {
+    position: relative;
+    margin: 0;
+}
+
+.imoload-content #imoload-meta {
+    position: relative;
+}
+
+.imoload-content .meta-notice,
+.imoload-content .loading-notice {
+    display: none;
+}
+
+.imoload-content #imoload-meta span {
+    display: block;
+    margin: 10px auto;
+}
+
+.imoload-content .meta-border-top,
+.imoload-content .meta-border-bottom,
+.imoload-content .loading-border-bottom {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #061228;
+    border-top: solid 2px #061228;
+}
+
+.imoload-content .submit {
+    text-align: center;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.imoload-content .imoload-collapsible {
+    position: relative;
+    background-color: #061228;
+    color: #34ab00;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    text-align: left;
+    outline: none;
+    border-bottom: solid 1px #34ab00;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+
+.imoload-content .collapsible-icon {
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.imoload-content .collapsible-icon::after {
+    content: "+";
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.imoload-content .active, 
+.imoload-content .imoload-collapsible:hover {
+    background-color: #34ab00;
+    color: #061228;
+}
+
+.imoload-content .imoload-collapsible:hover .collapsible-icon::after {
+    content: "⬇️";
+}
+
+.imoload-content .imoload-collapsible.active .collapsible-icon::after {
+    content: "-";
+}
+
+.imoload-content .imoload-collapsible.active:hover .collapsible-icon::after {
+    content: "⬆️";
+}
+
+.imoload-content .imoload-info {
+    max-width: 50%;
+    font-size: 12px;
+    color: #34ab00;
+    word-wrap: break-word;
+}
+
+.imoload-content .imoload-collapsible:hover > .imoload-info,
+.imoload-content .active .imoload-info {
+    color: #061228;
+}
+
+.imoload-content .form-table {
+    position: relative;
+    overflow: hidden;
+    padding: 0 18px;
+    background-color: #f1f1f1;
+}
+
+.imoload-content .imoload-preview-image {
+    border: solid 2px #061228;
+}
+
+.imoload-content .imoload-preview-image.default {
+    background-color: #061228;
+    width: 150px;
+    height: 100px;
+}
+
+.imoload-content .imoload-preview-image.default.hidden {
+    display: none;
+}
+
+.imoload-content .imoload-logo-button {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #34ab00;
+    background-color: #061228;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.imoload-content .submit-class {
+    color: #34ab00;
+    background-color: #061228;
+    border: none;
+    font-weight: bold;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.imoload-content .imoload-sidebar {
+    font-size: 12px;
+}
+
+.imoload-content .rating .button {
+    color: #34ab00;
+    background-color: #061228;
+    border: none;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.imoload-content .contact-info .button {
+    margin-top: 15px;
+    color: #34ab00;
+    background-color: #061228;
+    border: none;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.imoload-content .submit-class:hover,
+.imoload-content .imoload-logo-button:hover,
+.imoload-content .rating .button:hover,
+.imoload-content .contact-info .button:hover {
+    color: #061228;
+    background-color: #34ab00;
+}
+
+.imoload-content .meta-info a {
+    color: #061228;
+}
+
+.imoload-content .meta-info a:hover {
+    color: #34ab00;
+}
+
+/* Responsive design */
+
+@media screen and (max-width: 600px) {
+    .imoload-wrap h1 .imoload-title {
+        width: 50% !important;
+    }
+
+    .imoload-content .imoload-collapsible .group-title {
+        max-width: 30% !important;
+    }
+}
