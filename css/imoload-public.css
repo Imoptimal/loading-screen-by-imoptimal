@@ -1,0 +1,48 @@
+/* Front-end side styles */
+body {
+   opacity: 0; 
+}
+
+.imoload-overlay {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-transition: 1s 0.4s;
+    transition: 1s 0.4s;
+    opacity: 1;
+}
+
+.imoload-logo-container {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.imoload-logo-container img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.imoload-progstat {
+    position: absolute;
+    top: 65%;
+    left: 0;
+    width: 100%;
+    font-size: 32px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.imoload-progress {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    height: 10px;
+    width: 0;
+}

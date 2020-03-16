@@ -5,65 +5,32 @@ jQuery(function($) {
     var imgContainer = document.createElement('div');
     var progstat = document.createElement('div');
     var progress = document.createElement('div');
+    var image = document.createElement('img');
     overlay.className = 'imoload-overlay';
     imgContainer.className = 'imoload-logo-container';
     progstat.className = 'imoload-progstat';
     progress.className = 'imoload-progress';
+    image.className = 'imoload-atleast-one-image';
     overlay.appendChild(imgContainer);
     overlay.appendChild(progstat);
     overlay.appendChild(progress);
-    
-    document.body.className += ' ' + 'imoload-body';
-    var bodyElement = document.getElementsByClassName('imoload-body')[0];
+    imageNumber = document.images;
+
+    var bodyElement = document.getElementsByTagName('body')[0];
     if (typeof(bodyElement) != 'undefined' && bodyElement != null)
     {
         bodyElement.insertBefore(overlay, bodyElement.firstChild);
+        if (imageNumber.length < 1) {
+            bodyElement.appendChild(image);
+        }
     }
     // Array item based on $nameArray
     var $imoloadPhp = imoloadPhp[0];
     var $BackgroundColor = '#' + $imoloadPhp.imoload_background_color;
     var $TextColor = '#' + $imoloadPhp.imoload_text_color;
-    $('.imoload-overlay').css({
-        'position': 'fixed',
-        'z-index': '99999',
-        'top': '0',
-        'left': '0',
-        'bottom': '0',
-        'right': '0',
-        'background-color': $BackgroundColor,
-        '-webkit-transition': '1s 0.4s',
-        'transition': '1s 0.4s'
-    });
-     $('.imoload-logo-container').css({
-        'position': 'absolute',
-         'top': '25%',
-         'left': '0',
-         'width': '100%',
-         'text-align': 'center'
-    });
-    $('.imoload-logo-container img').css({
-        'max-width': '100%',
-        'height': 'auto',
-        'margin': '0 auto'
-    });
-    $('.imoload-progstat').css({
-        'position': 'absolute',
-        'top': '65%',
-        'left': '0',
-        'width': '100%',
-        'font-size': '32px',
-        'letter-spacing': '3px',
-        'text-align': 'center',
-        'color': $TextColor
-    });
-    $('.imoload-progress').css({
-        'position': 'absolute',
-        'top': '75%',
-        'left': '0',
-        'height': '10px',
-        'width': '0',
-        'background': $TextColor
-    });
+    $('.imoload-overlay').css('background-color', $BackgroundColor);
+    $('.imoload-progstat').css('color', $TextColor);
+    $('.imoload-progress').css('background', $TextColor);
     // Ajax call
     function getImage(the_id){
         var data = {
@@ -88,7 +55,8 @@ jQuery(function($) {
 jQuery(function($) {
     function imoloadClass(el){ return document.getElementsByClassName(el)[0]; }
     function loadbar() {
-        var ovrl = imoloadClass('imoload-overlay'),
+        var bodyElement = document.getElementsByTagName('body')[0],
+            ovrl = imoloadClass('imoload-overlay'),
             prog = imoloadClass('imoload-progress'),
             stat = imoloadClass('imoload-progstat'),
             img = document.images,
@@ -104,6 +72,7 @@ jQuery(function($) {
             if(c===tot) return doneLoading();
         }
         function doneLoading(){
+            bodyElement.style.opacity = 1;
             ovrl.style.opacity = 0;
             setTimeout(function(){ 
                 ovrl.style.display = "none";
@@ -117,5 +86,5 @@ jQuery(function($) {
         }    
     }
     document.addEventListener('DOMContentLoaded', loadbar, false);
-    
+
 }());

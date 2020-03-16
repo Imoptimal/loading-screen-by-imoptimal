@@ -50,6 +50,9 @@ Plugin released.
 Readme file update - added full resources list and plugins.
 Added plugins uri link.
 
+= 1.1.0 =
+Enabling webpage content to be hidden before the javascript powered loading screen starts.
+
 == Copyright ==
 
 Loading Screen by Imoptimal, Copyright 2020 Ivan Maljukanovic

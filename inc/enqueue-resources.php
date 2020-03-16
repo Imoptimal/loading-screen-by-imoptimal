@@ -11,7 +11,7 @@ if(!function_exists('imoload_public_resources')) {
         wp_register_script('imoload-other-pages-script', plugin_dir_url( __FILE__ ) . '../js/imoload-other-pages.js', array('jquery'), true);
         // Minified scripts
         wp_register_script('imoload-whole-website-script-min', plugin_dir_url( __FILE__ ) . '../js/imoload-whole-website-min.js', array('jquery'), true);
-        wp_register_script('imoload-front-page-script-min', plugin_dir_url( __FILE__ ) . '../js/imoload-front-page-script-min.js', array('jquery'), true);
+        wp_register_script('imoload-front-page-script-min', plugin_dir_url( __FILE__ ) . '../js/imoload-front-page-min.js', array('jquery'), true);
         wp_register_script('imoload-other-pages-script-min', plugin_dir_url( __FILE__ ) . '../js/imoload-other-pages-min.js', array('jquery'), true);
 
         // Passing php option variables into the javascript
@@ -79,6 +79,8 @@ if(!function_exists('imoload_public_resources')) {
                     wp_enqueue_script('imoload-other-pages-script-min');
                 }
             }
+            
+            wp_enqueue_style('imoload-public-style-min', plugin_dir_url( __FILE__ ) . '../css/imoload-public-min.css', array());
 
         } else { // not minified
 
@@ -93,6 +95,8 @@ if(!function_exists('imoload_public_resources')) {
                     wp_enqueue_script('imoload-other-pages-script');
                 }
             }
+            
+            wp_enqueue_style('imoload-public-style', plugin_dir_url( __FILE__ ) . '../css/imoload-public.css', array());
 
         }
 
