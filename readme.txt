@@ -53,6 +53,9 @@ Added plugins uri link.
 = 1.1.0 =
 Enabling webpage content to be hidden before the javascript powered loading screen starts.
 
+= 1.1.5 =
+Updated the loading logo/image style.
+
 == Copyright ==
 
 Loading Screen by Imoptimal, Copyright 2020 Ivan Maljukanovic

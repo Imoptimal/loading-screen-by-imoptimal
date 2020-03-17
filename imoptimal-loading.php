@@ -3,7 +3,7 @@
    Plugin Name: Loading Screen by Imoptimal
    Plugin URI: https://github.com/Imoptimal/loading-screen-by-imoptimal
    Description: Enable loading screen progress bar (with percentage text), that features the logo/image of your choosing.
-   Version: 1.1.0
+   Version: 1.1.5
    Author: imoptimal
    Author URI: https://www.imoptimal.com/
    Requires at least: 4.9.8
