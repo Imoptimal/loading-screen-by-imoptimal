@@ -36,7 +36,7 @@ Alternatively:
 = What if I'm using a lazy-load plugin for images on my website, does it effect the selected loading screen logo/image =
 
 Yes, it does have an effect - the selected logo/image is loaded with additional delay, which makes it visible only in the last half a second or so.
-My recommendation is to find a plugin that enables you to choose which css class to exclude from the effect of lazy-load.
+My recommendation is to find a plugin that enables you to choose which css class to exclude from the effect of lazy-load (use the class 'imoload-preview-image').
 I personally use the plugin 'Autoptimize' by Frank Goossens (futtta) for lazy-loading of images. It's a free plugin, and provides other optimization options as well.
 
 == Screenshots ==

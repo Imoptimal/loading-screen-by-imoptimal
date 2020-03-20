@@ -71,8 +71,6 @@ jQuery(function($) {
             setTimeout(function() { 
                 progress.style.width = percentage;
                 progstat.innerHTML = percentage;
-            }, 100);
-            setTimeout(function() {
                 if(start===total) return doneLoading();
             }, 500);
         }
