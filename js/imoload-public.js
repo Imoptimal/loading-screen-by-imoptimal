@@ -1,3 +1,4 @@
+/* Front-end script */
 // Stage the loading elements
 jQuery(function($) {
     var overlay = document.createElement('div');
@@ -6,7 +7,7 @@ jQuery(function($) {
     var progress = document.createElement('div');
     var image = document.createElement('img');
     overlay.className = 'imoload-overlay';
-    imgContainer.className = 'imoload-logo-container';
+    imgContainer.className = 'imoload-logo-container no-cache';
     progstat.className = 'imoload-progstat';
     progress.className = 'imoload-progress';
     image.className = 'imoload-atleast-one-image';
@@ -24,7 +25,7 @@ jQuery(function($) {
         }
     }
     // Array item based on $nameArray
-    var $imoloadPhp = imoloadPhp[2];
+    var $imoloadPhp = imoloadPhp;
     var $BackgroundColor = '#' + $imoloadPhp.imoload_background_color;
     var $TextColor = '#' + $imoloadPhp.imoload_text_color;
     $('.imoload-overlay').css('background-color', $BackgroundColor);
@@ -55,29 +56,34 @@ jQuery(function($) {
     function imoloadClass(el){ return document.getElementsByClassName(el)[0]; }
     function loadbar() {
         var bodyElement = document.getElementsByTagName('body')[0],
-            ovrl = imoloadClass('imoload-overlay'),
-            prog = imoloadClass('imoload-progress'),
-            stat = imoloadClass('imoload-progstat'),
+            overlay = imoloadClass('imoload-overlay'),
+            progress = imoloadClass('imoload-progress'),
+            progstat = imoloadClass('imoload-progstat'),
             img = document.images,
-            c = 0,
-            tot = img.length;
-        if(tot == 0) return doneLoading();
+            start = 0,
+            total = img.length;
+
+        if(total == 0) return doneLoading();
 
         function imgLoaded(){
-            c += 1;
-            var perc = ((100/tot*c) << 0) +"%";
-            prog.style.width = perc;
-            stat.innerHTML = perc;
-            if(c===tot) return doneLoading();
+            start += 1;
+            var percentage = ((100/total*start) << 0) +"%";
+            setTimeout(function() { 
+                progress.style.width = percentage;
+                progstat.innerHTML = percentage;
+            }, 100);
+            setTimeout(function() {
+                if(start===total) return doneLoading();
+            }, 500);
         }
         function doneLoading(){
             bodyElement.style.opacity = 1;
-            ovrl.style.opacity = 0;
+            overlay.style.opacity = 0;
             setTimeout(function(){ 
-                ovrl.style.display = "none";
+                overlay.style.display = "none";
             }, 1200);
         }
-        for(var i=0; i<tot; i++) {
+        for(var i=0; i<total; i++) {
             var tImg     = new Image();
             tImg.onload  = imgLoaded;
             tImg.onerror = imgLoaded;
@@ -85,5 +91,5 @@ jQuery(function($) {
         }    
     }
     document.addEventListener('DOMContentLoaded', loadbar, false);
-    
+
 }());

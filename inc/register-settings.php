@@ -118,9 +118,28 @@ if(!function_exists('imoload_settings_init')) {
     }
 }
 
+if(!function_exists('imoload_validate_loading_meta')) {
+    function imoload_validate_loading_meta( $input ) {
+        // Create our array for storing the validated options
+        $output = array();
+
+        foreach( $input as $key => $value ) {
+
+            // Check to see if the current option has a value. If so, process it.
+            if( isset( $input[$key] ) ) {
+
+                // Strip all HTML and PHP tags and properly handle quoted strings
+                $output[$key] = sanitize_text_field( $input[ $key ] );
+
+            } // end if
+        } // end foreach
+        // Return the array processing any additional functions filtered by this action
+        return apply_filters( 'imoload_meta', $output, $input );
+    }
+}
+
 if(!function_exists('imoload_validate_loading_settings')) {
     function imoload_validate_loading_settings( $input ) {
-
         // Create our array for storing the validated options
         $output = array();
 
@@ -136,27 +155,6 @@ if(!function_exists('imoload_validate_loading_settings')) {
         } // end foreach
         // Return the array processing any additional functions filtered by this action
         return apply_filters( 'imoload_settings', $output, $input );
-    }
-}
-
-if(!function_exists('imoload_validate_loading_meta')) {
-    function imoload_validate_loading_meta( $input ) {
-
-        // Create our array for storing the validated options
-        $output = array();
-
-        foreach( $input as $key => $value ) {
-
-            // Check to see if the current option has a value. If so, process it.
-            if( isset( $input[$key] ) ) {
-
-                // Strip all HTML and PHP tags and properly handle quoted strings
-                $output[$key] = sanitize_textarea_field( $input[ $key ] );
-
-            } // end if
-        } // end foreach
-        // Return the array processing any additional functions filtered by this action
-        return apply_filters( 'imoload_meta', $output, $input );
     }
 }
 

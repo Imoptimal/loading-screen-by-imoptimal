@@ -6,13 +6,8 @@ if(!function_exists('imoload_public_resources')) {
     function imoload_public_resources() {
         $options = get_option( 'imoload_settings' );
         
-        wp_register_script('imoload-whole-website-script', plugin_dir_url( __FILE__ ) . '../js/imoload-whole-website.js', array('jquery'), true);
-        wp_register_script('imoload-front-page-script', plugin_dir_url( __FILE__ ) . '../js/imoload-front-page.js', array('jquery'), true);
-        wp_register_script('imoload-other-pages-script', plugin_dir_url( __FILE__ ) . '../js/imoload-other-pages.js', array('jquery'), true);
-        // Minified scripts
-        wp_register_script('imoload-whole-website-script-min', plugin_dir_url( __FILE__ ) . '../js/imoload-whole-website-min.js', array('jquery'), true);
-        wp_register_script('imoload-front-page-script-min', plugin_dir_url( __FILE__ ) . '../js/imoload-front-page-min.js', array('jquery'), true);
-        wp_register_script('imoload-other-pages-script-min', plugin_dir_url( __FILE__ ) . '../js/imoload-other-pages-min.js', array('jquery'), true);
+        wp_register_script('imoload-public-script', plugin_dir_url( __FILE__ ) . '../js/imoload-public.js', array('jquery'), true);
+        wp_register_script('imoload-public-script-min', plugin_dir_url( __FILE__ ) . '../js/imoload-public-min.js', array('jquery'), true);
 
         // Passing php option variables into the javascript
         $options_array = get_option('imoload_settings');
@@ -49,53 +44,45 @@ if(!function_exists('imoload_public_resources')) {
         // Reset first level keys to index numbers
         $reset_array = array_values($renamed_array);
 
-        wp_localize_script('imoload-whole-website-script', 'imoloadPhp', $reset_array);
-        wp_localize_script('imoload-front-page-script', 'imoloadPhp', $reset_array);
-        wp_localize_script('imoload-other-pages-script', 'imoloadPhp', $reset_array);
-        // Minified scripts
-        wp_localize_script('imoload-whole-website-script-min', 'imoloadPhp', $reset_array);
-        wp_localize_script('imoload-front-page-script-min', 'imoloadPhp', $reset_array);
-        wp_localize_script('imoload-other-pages-script-min', 'imoloadPhp', $reset_array);
         // Ajax for front-end
-        wp_localize_script('imoload-whole-website-script', 'the_ajax_script', array('ajaxurl' => admin_url('admin-ajax.php')));
-        wp_localize_script('imoload-front-page-script', 'the_ajax_script', array('ajaxurl' => admin_url('admin-ajax.php')));
-        wp_localize_script('imoload-other-pages-script', 'the_ajax_script', array('ajaxurl' => admin_url('admin-ajax.php')));
-        wp_localize_script('imoload-whole-website-script-min', 'the_ajax_script', array('ajaxurl' => admin_url('admin-ajax.php')));
-        wp_localize_script('imoload-front-page-script-min', 'the_ajax_script', array('ajaxurl' => admin_url('admin-ajax.php')));
-        wp_localize_script('imoload-other-pages-script-min', 'the_ajax_script', array('ajaxurl' => admin_url('admin-ajax.php')));
+        wp_localize_script('imoload-public-script', 'the_ajax_script', array('ajaxurl' => admin_url('admin-ajax.php')));
+        wp_localize_script('imoload-public-script-min', 'the_ajax_script', array('ajaxurl' => admin_url('admin-ajax.php')));
 
         $optionsMeta = get_option( 'imoload_meta' );
 
         if ($optionsMeta['imoload_minification_field'] == 1) { // if minified selected
 
             if ($optionsMeta['imoload_numbers_field'] == 1) {
-                wp_enqueue_script('imoload-whole-website-script-min');
+                wp_localize_script('imoload-public-script-min', 'imoloadPhp', $reset_array[0]);
             }
 
             elseif ($optionsMeta['imoload_numbers_field'] == 3) {
                 if (is_front_page()) {
-                    wp_enqueue_script('imoload-front-page-script-min');
+                    wp_localize_script('imoload-public-script-min', 'imoloadPhp', $reset_array[1]);
                 } else {
-                    wp_enqueue_script('imoload-other-pages-script-min');
+                    wp_localize_script('imoload-public-script-min', 'imoloadPhp', $reset_array[2]);
                 }
             }
             
+            wp_enqueue_script('imoload-public-script-min');
             wp_enqueue_style('imoload-public-style-min', plugin_dir_url( __FILE__ ) . '../css/imoload-public-min.css', array());
 
         } else { // not minified
 
             if ($optionsMeta['imoload_numbers_field'] == 1) {
+                wp_localize_script('imoload-public-script', 'imoloadPhp', $reset_array[0]);
                 wp_enqueue_script('imoload-whole-website-script');
             }
 
             elseif ($optionsMeta['imoload_numbers_field'] == 3) {
                 if (is_front_page()) {
-                    wp_enqueue_script('imoload-front-page-script');
+                    wp_localize_script('imoload-public-script', 'imoloadPhp', $reset_array[1]);
                 } else {
-                    wp_enqueue_script('imoload-other-pages-script');
+                    wp_localize_script('imoload-public-script', 'imoloadPhp', $reset_array[2]);
                 }
             }
             
+            wp_enqueue_script('imoload-public-script');
             wp_enqueue_style('imoload-public-style', plugin_dir_url( __FILE__ ) . '../css/imoload-public.css', array());
 
         }
