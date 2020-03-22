@@ -10,3 +10,12 @@ Added plugins uri link.
 
 = 1.1.0 =
 Enabling webpage content to be hidden before the javascript powered loading screen starts.
+
+= 1.1.5 =
+Updated the loading logo/image style.
+
+= 1.2.0 =
+Cleaning the javascript code.
+
+= 1.2.1 =
+Set the default plugin values upon activation.

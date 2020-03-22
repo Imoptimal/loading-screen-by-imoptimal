@@ -4,13 +4,18 @@ add_action('wp_enqueue_scripts', 'imoload_public_resources');
 
 if(!function_exists('imoload_public_resources')) {
     function imoload_public_resources() {
-        $options = get_option( 'imoload_settings' );
         
         wp_register_script('imoload-public-script', plugin_dir_url( __FILE__ ) . '../js/imoload-public.js', array('jquery'), true);
         wp_register_script('imoload-public-script-min', plugin_dir_url( __FILE__ ) . '../js/imoload-public-min.js', array('jquery'), true);
 
         // Passing php option variables into the javascript
-        $options_array = get_option('imoload_settings');
+        // default array is at the position [0]
+        $defaultEmptyArray = array(
+            'imoload_logo' => '',
+            'imoload_background_color' => '',
+            'imoload_text_color' => ''
+        );
+        $options_array =  wp_parse_args( get_option( 'imoload_settings', $defaultEmptyArray), $defaultEmptyArray );
 
         // Dividing single array into groups of 3 (based on number of fields)
         $divided_array = array_chunk($options_array, 3, true);
@@ -48,19 +53,25 @@ if(!function_exists('imoload_public_resources')) {
         wp_localize_script('imoload-public-script', 'the_ajax_script', array('ajaxurl' => admin_url('admin-ajax.php')));
         wp_localize_script('imoload-public-script-min', 'the_ajax_script', array('ajaxurl' => admin_url('admin-ajax.php')));
 
-        $optionsMeta = get_option( 'imoload_meta' );
+        $defaults = array(
+            'imoload_minification_field'   => '0',
+            'imoload_numbers_field' => '1'
+        );
+        $options = wp_parse_args( get_option( 'imoload_meta', $defaults), $defaults );
+        $optionsMetaMinification = $options['imoload_minification_field'];
+        $optionsMetaNumbers = $options['imoload_numbers_field'];
 
-        if ($optionsMeta['imoload_minification_field'] == 1) { // if minified selected
+        if ($optionsMetaMinification == 1) { // if minified selected
 
-            if ($optionsMeta['imoload_numbers_field'] == 1) {
-                wp_localize_script('imoload-public-script-min', 'imoloadPhp', $reset_array[0]);
+            if ($optionsMetaNumbers == 1) {
+                wp_localize_script('imoload-public-script-min', 'imoloadPhp', $reset_array[1]);
             }
 
-            elseif ($optionsMeta['imoload_numbers_field'] == 3) {
+            elseif ($optionsMetaNumbers == 3) {
                 if (is_front_page()) {
-                    wp_localize_script('imoload-public-script-min', 'imoloadPhp', $reset_array[1]);
-                } else {
                     wp_localize_script('imoload-public-script-min', 'imoloadPhp', $reset_array[2]);
+                } else {
+                    wp_localize_script('imoload-public-script-min', 'imoloadPhp', $reset_array[3]);
                 }
             }
             
@@ -69,16 +80,16 @@ if(!function_exists('imoload_public_resources')) {
 
         } else { // not minified
 
-            if ($optionsMeta['imoload_numbers_field'] == 1) {
-                wp_localize_script('imoload-public-script', 'imoloadPhp', $reset_array[0]);
+            if ($optionsMetaNumbers == 1) {
+                wp_localize_script('imoload-public-script', 'imoloadPhp', $reset_array[1]);
                 wp_enqueue_script('imoload-whole-website-script');
             }
 
-            elseif ($optionsMeta['imoload_numbers_field'] == 3) {
+            elseif ($optionsMetaNumbers == 3) {
                 if (is_front_page()) {
-                    wp_localize_script('imoload-public-script', 'imoloadPhp', $reset_array[1]);
-                } else {
                     wp_localize_script('imoload-public-script', 'imoloadPhp', $reset_array[2]);
+                } else {
+                    wp_localize_script('imoload-public-script', 'imoloadPhp', $reset_array[3]);
                 }
             }
             
@@ -136,12 +147,18 @@ if(!function_exists('imoload_admin_resources')) {
             'empty' => $translateEmpty,
             'selected' => $translateSelected
         ));
+        
+        $defaults = array(
+            'imoload_minification_field'   => '0',
+            'imoload_numbers_field' => '1'
+        );
+        $options = wp_parse_args( get_option( 'imoload_meta', $defaults), $defaults );
+        $optionsMetaMinification = $options['imoload_minification_field'];
+        
+        wp_localize_script('imoload-admin-script', 'imoloadPhp', $options);
+        wp_localize_script('imoload-admin-script-min', 'imoloadPhp', $options);
 
-        $optionsMeta = get_option('imoload_meta');
-        wp_localize_script('imoload-admin-script', 'imoloadPhp', $optionsMeta);
-        wp_localize_script('imoload-admin-script-min', 'imoloadPhp', $optionsMeta);
-
-        if ($optionsMeta['imoload_minification_field'] == 1) { // if minified selected
+        if ($optionsMetaMinification == 1) { // if minified selected
 
             wp_enqueue_script('imoload-admin-script-min');
             wp_enqueue_script('imoload-color-picker-script-min');

@@ -37,7 +37,7 @@ Alternatively:
 
 Yes, it does have an effect - the selected logo/image is loaded with additional delay, which makes it visible only in the last half a second or so.
 My recommendation is to find a plugin that enables you to choose which css class to exclude from the effect of lazy-load (use the class 'imoload-preview-image').
-I personally use the plugin 'Autoptimize' by Frank Goossens (futtta) for lazy-loading of images. It's a free plugin, and provides other optimization options as well.
+I personally use the plugin 'Smush' by WPMU DEV for lazy-loading of images. It's a free plugin, and provides other image optimization options as well.
 
 == Screenshots ==
 
@@ -64,6 +64,9 @@ Updated the loading logo/image style.
 
 = 1.2.0 =
 Cleaning the javascript code.
+
+= 1.2.1 =
+Set the default plugin values upon activation.
 
 == Copyright ==
 

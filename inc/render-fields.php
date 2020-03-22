@@ -1,16 +1,17 @@
 <?php
 if(!function_exists('imoload_numbers_render')) {
     function imoload_numbers_render() {
-        $options = get_option( 'imoload_meta' );
-        if(isset($options['imoload_numbers_field'])) {
-            $numbers = $options['imoload_numbers_field'];
-        }
-        if ( empty($numbers) ) $numbers = 1;
+
+        $defaults = array(
+            'imoload_numbers_field'   => '1',
+        );
+        $options = wp_parse_args( get_option( 'imoload_meta', $defaults), $defaults );
+        $numbers = $options['imoload_numbers_field'];
 ?>
 
-<input type="radio" name='imoload_meta[imoload_numbers_field]' value="1"  <?php checked('1', $options['imoload_numbers_field']); ?>>
+<input type="radio" name='imoload_meta[imoload_numbers_field]' value="1"  <?php checked('1', $numbers); ?>>
 <label for="1">1 - <?php esc_html_e('Use the same loading screen for the whole website', 'imoptimal_loading'); ?></label> </br>
-<input type="radio" name='imoload_meta[imoload_numbers_field]' value="3" <?php checked('3', $options['imoload_numbers_field']); ?>>
+<input type="radio" name='imoload_meta[imoload_numbers_field]' value="3" <?php checked('3', $numbers); ?>>
 <label for="3">2 - <?php esc_html_e('Use different loading screens for: homepage, other pages', 'imoptimal_loading'); ?></label>
 
 <?php }
@@ -18,11 +19,12 @@ if(!function_exists('imoload_numbers_render')) {
 
 if(!function_exists('imoload_minification_render')) {
     function imoload_minification_render() {
-        $options = get_option( 'imoload_meta' );
-        if(isset($options['imoload_minification_field'])) {
-            $minification = $options['imoload_minification_field'];
-        }
-        if ( empty($minification) ) $minification = 0;
+
+        $defaults = array(
+            'imoload_minification_field'   => '0',
+        );
+        $options = wp_parse_args( get_option( 'imoload_meta', $defaults), $defaults );
+        $minification = $options['imoload_minification_field'];
 ?>
 
 <select name='imoload_meta[imoload_minification_field]' value="<?php echo $minification; ?>">
@@ -35,12 +37,13 @@ if(!function_exists('imoload_minification_render')) {
 
 if(!function_exists('imoload_logo_render')) {
     function imoload_logo_render($args) {
-        $options = get_option( 'imoload_settings' );
+
         $logo_field = 'imoload_logo_' . $args['index'];
-        if(isset($options[$logo_field])) {
-            $value = $options[$logo_field];
-        }
-        if ( empty($value) ) $value = '';
+        $defaults = array(
+            $logo_field   => '',
+        );
+        $options = wp_parse_args( get_option( 'imoload_settings', $defaults), $defaults );
+        $value = $options[$logo_field];
 
         if( $value !== '' ) {
             // Change with the image size you want to use
@@ -58,26 +61,28 @@ if(!function_exists('imoload_logo_render')) {
 
 if(!function_exists('imoload_background_color_render')) {
     function imoload_background_color_render($args) {
-        $options = get_option( 'imoload_settings' );
+
         $background_color_field = 'imoload_background_color_' . $args['index'];
-        if(isset($options[$background_color_field])) {
-            $value = $options[$background_color_field];
-        }
-        if ( empty($value) ) $value = '';
-        
+        $defaults = array(
+            $background_color_field   => '',
+        );
+        $options = wp_parse_args( get_option( 'imoload_settings', $defaults), $defaults );
+        $value = $options[$background_color_field];
+
         echo "<input class='jscolor' name='imoload_settings[{$background_color_field}]' value='{$value}'>";
     }
 }
 
 if(!function_exists('imoload_text_color_render')) {
     function imoload_text_color_render($args) {
-        $options = get_option( 'imoload_settings' );
+
         $text_color_field = 'imoload_text_color_' . $args['index'];
-        if(isset($options[$text_color_field])) {
-            $value = $options[$text_color_field];
-        }
-        if ( empty($value) ) $value = '';
-        
+        $defaults = array(
+            $text_color_field   => '',
+        );
+        $options = wp_parse_args( get_option( 'imoload_settings', $defaults), $defaults );
+        $value = $options[$text_color_field];
+
         echo "<input class='jscolor' name='imoload_settings[{$text_color_field}]' value='{$value}'>";
     }
 }
