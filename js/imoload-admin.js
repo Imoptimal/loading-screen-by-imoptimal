@@ -135,6 +135,9 @@ jQuery(function($) {
                 .error( 
                 function() {
                     $(notice).addClass('notice-error').html('<span>An error occured. Not saved!</span>').css('display', 'block');
+                    setTimeout(function() {
+                        $(notice).css('display', 'none');
+                    }, 2000);
                 })
                 .success( function() {
                 if (reload == true) {
@@ -143,6 +146,9 @@ jQuery(function($) {
                     //don't reload
                 }
                 $(notice).addClass('notice-success is-dismissible').html('<span>Saved succesfully!</span>').css('display', 'block');
+                setTimeout(function() {
+                        $(notice).css('display', 'none');
+                    }, 2000);
             });
             return false;    
         });
