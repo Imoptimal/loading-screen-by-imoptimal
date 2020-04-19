@@ -18,3 +18,6 @@ Cleaning the javascript code.
 
 = 1.2.1 = 
 Set the default plugin values upon activation.
+
+= 1.2.2 =
+The plugin's settings page submit button ajax request modified in order to reset the button style and remove notices after 2 sec.
