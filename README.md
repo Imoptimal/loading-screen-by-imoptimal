@@ -21,3 +21,6 @@ Set the default plugin values upon activation.
 
 = 1.2.2 =
 The plugin's settings page submit button ajax request modified in order to reset the button style and remove notices after 2 sec.
+
+= 1.2.3 =
+Added support and review links on the plugin settings page.

@@ -2,7 +2,7 @@
 Contributors: imoptimal
 Tags: loading, loading screen
 Requires at least: 4.9.8
-Tested up to: 5.4.0
+Tested up to: 5.4.1
 Requires PHP: 5.6
 Stable tag: trunk.
 License: GPLv3 or later
@@ -70,6 +70,9 @@ Set the default plugin values upon activation.
 
 = 1.2.2 =
 The plugin's settings page submit button ajax request modified in order to reset the button style and remove notices after 2 sec.
+
+= 1.2.3 =
+Added support and review links on the plugin settings page.
 
 == Copyright ==
 

@@ -57,7 +57,7 @@ if(!function_exists('imoload_options_page')) {
                     <strong><?php esc_html_e('rating', 'imoptimal_loading'); ?></strong><br>
                     <strong><?php esc_html_e('A huge thanks in advance!', 'imoptimal_loading'); ?></strong>
                 </p>
-                <a href="https://wordpress.org/plugins/" target="_blank" class="button button-primary"><?php esc_html_e('Leave us a rating', 'imoptimal_loading'); ?></a>
+                <a href="https://wordpress.org/support/plugin/loading-screen-by-imoptimal/reviews/" target="_blank" class="button button-primary"><?php esc_html_e('Leave us a rating', 'imoptimal_loading'); ?></a>
             </div>
 
             <div class="meta-info">
@@ -68,7 +68,7 @@ if(!function_exists('imoload_options_page')) {
                     <strong><?php esc_html_e('Need some support?', 'imoptimal_loading'); ?></strong> <br>
                     <strong><?php esc_html_e('Contact the developers via the Support Forum', 'imoptimal_loading'); ?></strong>
                     <div>
-                        <a href="https://wordpress.org/support/plugin/" target="_blank" class="button button-primary"><?php esc_html_e('Contact us', 'imoload-tpimal'); ?></a>
+                        <a href="https://wordpress.org/support/plugin/loading-screen-by-imoptimal/" target="_blank" class="button button-primary"><?php esc_html_e('Contact us', 'imoptimal_loading'); ?></a>
                     </div>
                 </div>
             </div>

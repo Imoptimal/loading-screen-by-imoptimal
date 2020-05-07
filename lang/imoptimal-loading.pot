@@ -20,11 +20,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: inc/enqueue-resources.php:136
+#: inc/enqueue-resources.php:138
 msgid "Set the custom logo"
 msgstr ""
 
-#: inc/enqueue-resources.php:137
+#: inc/enqueue-resources.php:139
 msgid "Custom logo selected"
 msgstr ""
 
@@ -140,18 +140,18 @@ msgstr ""
 msgid "Pick the bar and percentage text color"
 msgstr ""
 
-#: inc/render-fields.php:12
+#: inc/render-fields.php:13
 msgid "Use the same loading screen for the whole website"
 msgstr ""
 
-#: inc/render-fields.php:14
+#: inc/render-fields.php:15
 msgid "Use different loading screens for: homepage, other pages"
 msgstr ""
 
-#: inc/render-fields.php:29
+#: inc/render-fields.php:31
 msgid "Use regural files (not minified)"
 msgstr ""
 
-#: inc/render-fields.php:30
+#: inc/render-fields.php:32
 msgid "Use minified files"
 msgstr ""
