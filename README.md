@@ -24,3 +24,6 @@ The plugin's settings page submit button ajax request modified in order to reset
 
 = 1.2.3 =
 Added support and review links on the plugin settings page.
+
+= 1.2.4 =
+Moved the user-facing css code into the javascript file.

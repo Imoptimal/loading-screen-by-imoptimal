@@ -1,6 +1,11 @@
 /* Front-end script */
-// Stage the loading elements
 jQuery(function($) {
+    // CSS styles
+    var CSS = document.createElement('style');
+    CSS.innerHTML = 'body {opacity: 0;} .imoload-overlay {position: fixed; z-index: 99999; top: 0; left: 0; bottom: 0; right: 0; -webkit-transition: 1s 0.4s; transition: 1s 0.4s; opacity: 1; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;} .imoload-logo-container {text-align: center;} .imoload-logo-container img {max-width: 100%; height: auto;margin: 0 auto;} .imoload-progstat {position: absolute; top: 85%; left: 0; width: 100%; font-size: 32px; letter-spacing: 3px; text-align: center;} .imoload-progress {position: absolute; top: 95%; left: 0; height: 10px; width: 0;}';
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(CSS);
+    // Stage the loading elements
     var overlay = document.createElement('div');
     var imgContainer = document.createElement('div');
     var progstat = document.createElement('div');
