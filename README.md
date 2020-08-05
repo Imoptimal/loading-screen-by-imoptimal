@@ -1,5 +1,9 @@
 # loading-screen-by-imoptimal
-WordPress plugin that is used to enable loading screen progress bar (with percentage text), that features the logo/image of your choosing.
+WordPress plugin that is used to enable loading screen progress bar (with percentage text), that features the logo/image of your choosing
+
+Available @ [wordpress.org/plugins/loading-screen-by-imoptimal](https://wordpress.org/plugins/loading-screen-by-imoptimal/)
+
+Demo @ my personal website [imoptimal.com](https://imoptimal.com/)
 
 = 1.0.0 = 
 Plugin released.
