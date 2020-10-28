@@ -2,14 +2,14 @@
 Contributors: imoptimal
 Tags: loading, loading screen
 Requires at least: 4.9.8
-Tested up to: 5.4.1
+Tested up to: 5.5.1
 Requires PHP: 5.6
 Stable tag: trunk.
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 == Description ==
-Enable loading screen progress bar (with percentage text), that features the logo/image of your choosing.
+Complement your branding efforts by enabling a loading screen progress bar (with percentage text) on your website, that features the logo/image of your choosing.
 
 Key Features:
 * Possibility to set the number of loading screen options your website needs (either one for the entire website, or two different ones - first for the homepage, second for all of the other pages).
@@ -80,6 +80,12 @@ Moved the user-facing css code into the javascript file.
 = 1.2.5 =
 Reverting back. Loading screen messed up without css files.
 
+= 1.2.6 =
+Plugin assets updated.
+
+= 1.2.7 =
+Fixed notice issue on activation related to front-end script variables.
+
 == Copyright ==
 
 Loading Screen by Imoptimal, Copyright 2020 Ivan Maljukanovic
@@ -90,9 +96,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.en.h
 
 == Resources ==
 * jscolor.js 2.0.5, GPLv3 - available @ http://jscolor.com/
-* imoptimal-logo-white.png © 2018 Ivan Maljukanović, CC0 - made by me, not available online apart from the plugins directory /img, and my personal website @ https://imoptimal.com (used as an asset)
-* banner-772x250.png © 2019 Ivan Maljukanović, CC0 - made by me, not available online apart from the plugins official wordpress.org repository (used as an asset)
-* icon.svg © 2020 Ivan Maljukanović, CC0 - made by me, not available online apart from the plugins official wordpress.org repository (used as an asset)
+* imoptimal-logo-white.png © 2020 Ivan Maljukanović, CC0 - made by me, not available online apart from the plugins directory /img, and my personal website @ https://imoptimal.com (used as an asset)
+* banner-772x250.png © 2020 Ivan Maljukanović, CC0 - made by me, not available online apart from the plugins official wordpress.org repository (used as an asset)
+* icon-256x256.png © 2020 Ivan Maljukanović, CC0 - made by me, not available online apart from the plugins official wordpress.org repository (used as an asset)
 
 Resources used in the plugins last screenshot (number 5):
 * Photo of my cat Mizza © 2010 Swanheart, CC0 - made for me on my request; given to me free of charge; not available online

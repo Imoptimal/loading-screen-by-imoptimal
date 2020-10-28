@@ -48,6 +48,10 @@ if(!function_exists('imoload_public_resources')) {
 
         // Reset first level keys to index numbers
         $reset_array = array_values($renamed_array);
+        // Add null default value - notice issue
+        $arrayItemOne = isset($reset_array[1]) ? $reset_array[1] : null;
+        $arrayItemTwo = isset($reset_array[2]) ? $reset_array[2] : null;
+        $arrayItemThree = isset($reset_array[3]) ? $reset_array[3] : null;
 
         // Ajax for front-end
         wp_localize_script('imoload-public-script', 'the_ajax_script', array('ajaxurl' => admin_url('admin-ajax.php')));
@@ -64,14 +68,14 @@ if(!function_exists('imoload_public_resources')) {
         if ($optionsMetaMinification == 1) { // if minified selected
 
             if ($optionsMetaNumbers == 1) {
-                wp_localize_script('imoload-public-script-min', 'imoloadPhp', $reset_array[1]);
+                wp_localize_script('imoload-public-script-min', 'imoloadPhp', $arrayItemOne);
             }
 
             elseif ($optionsMetaNumbers == 3) {
                 if (is_front_page()) {
-                    wp_localize_script('imoload-public-script-min', 'imoloadPhp', $reset_array[2]);
+                    wp_localize_script('imoload-public-script-min', 'imoloadPhp', $arrayItemTwo);
                 } else {
-                    wp_localize_script('imoload-public-script-min', 'imoloadPhp', $reset_array[3]);
+                    wp_localize_script('imoload-public-script-min', 'imoloadPhp', $arrayItemThree);
                 }
             }
             
@@ -81,15 +85,15 @@ if(!function_exists('imoload_public_resources')) {
         } else { // not minified
 
             if ($optionsMetaNumbers == 1) {
-                wp_localize_script('imoload-public-script', 'imoloadPhp', $reset_array[1]);
+                wp_localize_script('imoload-public-script', 'imoloadPhp', $arrayItemOne);
                 wp_enqueue_script('imoload-whole-website-script');
             }
 
             elseif ($optionsMetaNumbers == 3) {
                 if (is_front_page()) {
-                    wp_localize_script('imoload-public-script', 'imoloadPhp', $reset_array[2]);
+                    wp_localize_script('imoload-public-script', 'imoloadPhp', $arrayItemTwo);
                 } else {
-                    wp_localize_script('imoload-public-script', 'imoloadPhp', $reset_array[3]);
+                    wp_localize_script('imoload-public-script', 'imoloadPhp', $arrayItemThree);
                 }
             }
             

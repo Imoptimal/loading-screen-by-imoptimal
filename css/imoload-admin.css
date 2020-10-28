@@ -27,7 +27,7 @@
 
 .imoload-wrap .imoload-logo {
     display: inline-block;
-    width: 120px;
+    width: 90px;
     height: 70px;
     background-image: url("../img/imoptimal-logo-white.png");
     background-repeat: no-repeat;
@@ -73,13 +73,13 @@
 }
 
 .imoload-wrap .imoload-instructions:hover .pointer::before {
-    content: "⬇️";
+    content: "-";
     color: #061228;
     background-color: #34ab00;
 }
 
 .imoload-wrap .imoload-instructions.active:hover .pointer::before {
-    content: "⬆️";
+    content: "-";
 }
 
 .imoload-wrap ol {
@@ -174,7 +174,7 @@
 }
 
 .imoload-content .imoload-collapsible:hover .collapsible-icon::after {
-    content: "⬇️";
+    content: "-";
 }
 
 .imoload-content .imoload-collapsible.active .collapsible-icon::after {
@@ -182,7 +182,7 @@
 }
 
 .imoload-content .imoload-collapsible.active:hover .collapsible-icon::after {
-    content: "⬆️";
+    content: "-";
 }
 
 .imoload-content .imoload-info {
